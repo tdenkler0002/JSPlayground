@@ -1,0 +1,39 @@
+1. Equality operators - lets us see if two values are equal or not equal
+    Ex 1 - JS is going to compare these two. JS is going to attempt to convert the variables to the same type. So if you had a number and string it would convert the number to string
+    Ex 2 - With the triple it will not to type conversion meaning that the type of the variables have to be the same, this is known as strict equality.
+        - it's important to know the difference between these, we usually use the triple
+    Ex 3 - Inequality 
+
+
+2. Unary - operate on single values
+    Ex 4 - if thing1 was 7 after it would be equal to 8
+    Ex 5 - When placed after the value it will only get incremented after its use
+    Ex 8 - not used often but convert string to number type
+    Ex 9 - Will change the sign of the number type
+
+
+3. Boolean - true or falce
+    Ex 10 - both expressions need to be true
+    Ex 11 - the or - only one condition needs to be met. So either one or both.
+    Ex 12 - when using both - need to be careful, and symbol has higher precendence - the ands will be evaulated first
+     to make this evaluate first you need to put it in parens like Ex 13
+
+    Ex 14 - the not - it will convert it to a boolean and flip it. 
+
+
+4 - Relational 
+    - straight forward with numbers
+    - with strings it is harder
+    - Ex 15 - the result on this is true -- but why? Z is capitalized, it compares ASCII values, sometimes with these it is best to use toLowercase
+
+ 5 - Conditional - used in place of the if statement
+    - the parens are optional - but make it nice to let us know we are dealing with a conditional
+
+6 - Assignment - 
+    EX 16 - adds 10 to thing1 and stores it back on thing1
+    left shift - shift bits to the left by 1 bit
+    same with right shift
+
+
+    OPERATOR precendence
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table

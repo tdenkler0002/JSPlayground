@@ -1,0 +1,31 @@
+1. Steps to creating a new project in JS (Example-project-1)
+    - create a new folder called scripts
+    - create a file called `main.js`
+    - create a template index.html page
+    - add the scripts tag before the end of the body tag (This is basically doing the same job as the <link> element for CSS — it applies the JavaScript to the page, so it can have an effect on the HTML (along with the CSS, and anything else on the page).)
+    - The reason we've put the <script> element near the bottom of the HTML file is that HTML is loaded by the browser in the order it appears in the file. If the JavaScript is loaded first and it is supposed to affect the HTML below it, it might not work, as the JavaScript would be loaded before the HTML it is supposed to work on. Therefore, putting JavaScript near the bottom of the HTML page is often the best strategy.
+    - save and load
+
+2. The basics
+    - Variable declarations
+        - Scope scope scope - it is important to declare variables within a specific scope, this is where variable declarations come in.
+        - var - A long long time ago in a ecmascript far far away aka ES5 code and below there was var.
+            - function scoped  - scope is limited to function it is declared in
+            - are not block scoped 
+            - the variable may or may not be reassigned and it may or may not be used for the entire function - it is weak
+            - use let instead
+            - ex 3 is  overwritten by  x inside the function bc  we didn't specify the scope
+        - let - block scoped = less mistakes. good for reassigning (counter in loop, value swaps in algorithms)
+            - ex 5 - Even though t was assigned to 1 in the if block, that assignment was local to the block and therefore our “global” t was still 0. The if block’s scope was separate from the global scope.
+        -const - restricts overwriting variables
+            - block scoped
+            - Ex 6 - error because see above
+            - You cannot create a const without assigning it
+            - You can however mutate variables (In JS objects/Arrays muteable in JS)
+        - Hoisting
+            - var can be hoisted to top of their scope
+            The interpreter moved (e.g. “hoisted”) the variable declaration to the top of the scope.
+            However, the variable was not assigned to 0 yet. undefined says “I know i exists, but I don’t know what value i points to because you didn’t assign it to anything”.
+
+             - let/const are not hoisted meaning This protects against variable declarations placed after references to variables.
+                const doesn’t hoist the declaration → error: reference before declaration→ prevents bug.

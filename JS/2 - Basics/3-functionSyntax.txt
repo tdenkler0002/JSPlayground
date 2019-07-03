@@ -1,0 +1,61 @@
+1) When it comes to functions in JS we have several things to think of:
+    - JavaScript code that forms the function body
+    - The list of function parameters
+    - The variables accessible from the outer scope
+    - The returned value
+    - The context this when the function is invoked
+    - Named or anonymous function
+    - The variable that holds the function object after declaration
+    - arguments object (or its missing in an arrow function)
+
+2) Function Declaration
+    - good for recursion or detaching event listeners
+    - Always starts with keyword function - otherwise it is an expression
+
+3) Function expression
+    - function keyword followed by optional function name, list of parameters and curlies
+    - when a function should be created based on some conditions use a function expression
+    - these can be named, if not considered anonymous
+    - named functions have a name property that holds that function name
+        - these are generally better than anonymous due to:
+            - error msgs and call stacks show more info
+            - comfortable debugging
+            - function name helps understand what it does
+            - access function by name inside its scope for recursive calls
+
+4) Shorthand method definition
+    - can be used in method declaration on obj leterals and ES6 classes
+    - define thme using a function name, list of params and body statements
+    - this is how methods in classes are created
+    -computed property names in object literals
+
+5) Arrow Function
+    - when an arrow function has one parameter, the parenthesis can be emitted
+    - it is anonymous - name is an empty string
+    - arguments obj is not available
+
+    Let's stop to talk about context transparency (this)
+        - functions create their own execution context, hence we have to use this
+        -  an arrow function does not create its own execution context, takes it lexically (it does not create its own this like function expression or function declaration dep on invocation)
+            - Before this sometimes to get context we used:
+                .bind(this) or var self = this when it needed the enclosing context
+        - On the example - Numbers class holds array of numbers - provides a method addNumber() to insert new numbers
+        - When addNumber() is called w/o arguments, a closure is returned. The closure is an arrow function - this is numbersObject bc the context is taken lexically from addNumbers()
+    
+    - the parenthesis pairs and curly braces are optional for single param and body statements - for short callback functions.
+
+6) Generator Function
+    - returns a generator object.
+
+7) new Function
+ - going back to function being first class objects - a function is a reg object of type function.
+ - function type has a constructor of Function - when it is invoked as a constructor, a new function is created
+ - these functions do not have access to current scope and closures cannot be created --- created on global scope
+ - one possible application of this is a better way to access the global object in a browser or nodeJS script
+ - functions generally should be declared this way...the function body is eval'd at runtime
+
+
+ When to use what?
+ - function should use this from enclosing function, callback function has one short statement - arrow function
+ - shorter synxtax when declaring methods on obj literals - shorthand method
+ - new function should not be used - security risks - etc
