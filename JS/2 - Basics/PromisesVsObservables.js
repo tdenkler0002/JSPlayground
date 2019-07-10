@@ -101,7 +101,7 @@ function errorFunc(error) {
 
 function completeFunc() {
     console.log("Completed");
-}
+}   
 
 const observable = new Observable(observer => {
     const value = Math.random();
